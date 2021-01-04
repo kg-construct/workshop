@@ -80,12 +80,12 @@
 		<div class="row">
 			<!-- section title -->
 			<div class="section-title">
-				<h2 class="title"><span>KGC</span> <span style="color: #dd0a37;"> Open Challenges </span></h2>
+                <h2 class="title"><span>KGC</span> <span style="color: #dd0a37;"> Open Challenges </span> <span>v.1 </span></h2>
 			</div>
 			<!-- /section title -->
 
 			<div class="col-md-10 col-md-offset-1 text-justify">
-				<!-- about content -->
+				<!-- C1 -->
 				<div class="about-content" style="font-size: 14pt">
                     <h3 class="title"><span style="color: #dd0a37;">[C1] Language Tags and Datatype</span></h3>
 					<p> This challenge refers to both language and datatype tags but it would be best if their solutions are aligned.
@@ -99,7 +99,7 @@
                         <a href="https://github.com/kg-construct/mapping-challenges/tree/main/challenges/language-map">
                             https://github.com/kg-construct/mapping-challenges/tree/main/challenges/language-map</a>
                     </p>
-                    <p> <b>CG discussion</b>:
+                    <p> <b>CG discussion</b>: <br>
                         <a href="https://github.com/kg-construct/mapping-challenges/issues/23">
                             https://github.com/kg-construct/mapping-challenges/issues/23 </a>
                     </p>
@@ -154,6 +154,150 @@
                     </p>
                 </div>
 			</div>
+            <div class="col-md-10 col-md-offset-1 text-justify">
+                <!-- C2 -->
+                <div class="about-content" style="font-size: 14pt">
+                    <h3 class="title"><span style="color: #dd0a37;">[C2] Iterators</span></h3>
+                    <p> This challenge refers to iteration patterns.
+                    </p>
+
+                </div>
+                <div class="about-content" style="font-size: 14pt">
+                    <h4 class="title"><span style="color: #dd0a37;">[C2a] access field outside the iteration </span></h4>
+                    <p> <b>Challenge resources</b>: <br> </p>
+                    <p>
+                        <a href="https://github.com/kg-construct/mapping-challenges/tree/main/challenges/access-fields-outside-iteration">
+                            https://github.com/kg-construct/mapping-challenges/tree/main/challenges/access-fields-outside-iteration</a>
+                    </p>
+                    <p> <b>CG discussion</b>: <br>
+                        <a href="https://github.com/kg-construct/mapping-challenges/issues/20">
+                            https://github.com/kg-construct/mapping-challenges/issues/20 </a>
+                    </p>
+                    <p> <b>other relevant discussion</b>: <br>
+                        <a href="https://github.com/RMLio/rmlmapper-java/issues/28">
+                            https://github.com/RMLio/rmlmapper-java/issues/28 </a>
+                    </p>
+                    <p> <b>R2RML</b>:
+                        R2RML considers that the default iteration pattern is ‘per line’ of the SQL table
+                    </p>
+                    <p> <b>RML</b>:
+                        The iteration pattern can be manually defined with the property <code>rml:iterator</code>
+                    </p>
+                    <p> <b>RML Processor</b>:
+                    </p>
+                    <p> <b>problem</b>:
+                        Sometimes it is desired to refer to a data value ‘outside’ the iteration pattern.
+                        xR2RML proposes one solution to do that using the "pushDown" property. Are there other alternatives?
+                    </p>
+                    <p> <b>related to</b>:
+                        [C5]
+                    </p>
+                </div>
+                <div class="about-content" style="font-size: 14pt">
+                    <h4 class="title"><span style="color: #dd0a37;">[C2b] iteration over multi-value references</span></h4>
+                    <p> <b>Challenge resources</b>: <br> </p>
+                    <p>
+                        <a href="https://github.com/kg-construct/mapping-challenges/issues/20">
+                            https://github.com/kg-construct/mapping-challenges/issues/20</a>
+                    </p>
+                    <p> <b>CG discussion</b>:
+                        <a href=" "> </a>
+                    </p>
+                    <p> <b>R2RML</b>:
+                        R2RML considers that the default iteration pattern is ‘per line’ of the SQL table.
+                    </p>
+                    <p> <b>RML</b>:
+                        The iteration pattern can be manually defined with the property <code>rml:iterator</code>
+                    </p>
+                    <p> <b>problem</b>:
+                        Sometimes it is desired to iterate over the multiple values that are returned.
+                        How could that be possible? How should it be differently defined
+                        compared to processing multiple values in the same way?
+                    </p>
+                    <p> <b>related to</b>:
+                        [C2a], [C3], [C5]
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 text-justify">
+                <!-- C3 -->
+                <div class="about-content" style="font-size: 14pt">
+                    <h3 class="title"><span style="color: #dd0a37;">[C3] Multi-Value references</span></h3>
+                    <p> This challenge refers to multi-value references.
+                    </p>
+
+                </div>
+                <div class="about-content" style="font-size: 14pt">
+                    <h4 class="title"><span style="color: #dd0a37;">[C3a] 1 reference - N values </span></h4>
+                    <p> <b>R2RML</b>:
+                        R2RML expects that only one value is returned from a reference to the table.
+                    </p>
+                    <p> <b>RML</b>:
+                        RML allows multiple values to be returned from a reference to a data source.
+                    </p>
+                    <p> <b>RML Processor</b>:
+                    </p>
+                    <p> <b>problem</b>:
+                        RML fails to give a clear explanation of how the multiple values should be handled.
+                        By default multiple RDF terms are expected to be generated by an RML processor.
+                        However what happens if each returned value needs to be processed separately?
+                        What happens if functions need to be included?
+                        What should be the default behavior of an RML processor?
+                        Would one need to opt out? If so, when and how?
+                    </p>
+                    <p> <b>related to</b>:
+                        [C2b], [C4]
+                    </p>
+                    <p> <b>Challenge resources</b>: <br> </p>
+                    <p>
+                        <a href="https://github.com/kg-construct/mapping-challenges/tree/main/challenges/multivalue-references">
+                            https://github.com/kg-construct/mapping-challenges/tree/main/challenges/multivalue-references</a>
+                    </p>
+                    <p> <b>CG discussion</b>: <br>
+                        <a href="https://github.com/kg-construct/mapping-challenges/issues/20">
+                            https://github.com/kg-construct/mapping-challenges/issues/20 </a>, <br>
+                        <a href="https://github.com/kg-construct/mapping-challenges/issues/19">
+                            https://github.com/kg-construct/mapping-challenges/issues/19 </a>
+                    </p>
+                    <p> <b>other relevant discussion</b>: <br>
+                        <a href="https://github.com/RMLio/rml-implementation-report/issues/11">
+                            https://github.com/RMLio/rml-implementation-report/issues/11 </a>, <br>
+                        <a href="https://stackoverflow.com/questions/61751174/is-there-a-solution-in-rml-for-multiple-complex-entities-in-one-data-element-ce">
+                            https://stackoverflow.com/questions/61751174/is-there-a-solution-in-rml-for-multiple-complex-entities-in-one-data-element-ce </a>
+                    </p>
+                </div>
+
+                <div class="about-content" style="font-size: 14pt">
+                    <h4 class="title"><span style="color: #dd0a37;">[C3b] multi-value references for language/datatype tags</span></h4>
+                    <p> <b>R2RML</b>:
+
+                    </p>
+                    <p> <b>RML</b>:
+
+                    </p>
+                    <p> <b>problem</b>:
+                        What happens when multiple values are returned and language tags need to be applied?
+                        What happens when multiple values are returned and different languages tags need to be applied?
+                    </p>
+                    <p> <b>related to</b>:
+                        [C2b], [C3a]
+                    </p>
+                    <p> <b>Challenge resources</b>: <br>
+                        <a href="https://github.com/kg-construct/mapping-challenges/tree/main/challenges/generate-multiple-values">
+                            https://github.com/kg-construct/mapping-challenges/tree/main/challenges/generate-multiple-values
+                        </a>
+                    </p>
+                    <p> <b>CG discussion</b>: <br>
+                        <a href="https://github.com/kg-construct/mapping-challenges/issues/10">
+                            https://github.com/kg-construct/mapping-challenges/issues/10</a>
+                    </p>
+                    <p> <b>other relevant discussion</b>: <br>
+                        <a href="https://github.com/RMLio/rmlmapper-java/issues/65">
+                            https://github.com/RMLio/rmlmapper-java/issues/65</a>
+                    </p>
+                </div>
+            </div>
 		</div>
 
 	</div>
