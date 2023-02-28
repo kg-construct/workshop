@@ -90,7 +90,7 @@
 
 				<div class="about-content" style="font-size: 14pt">
 					<p>
-						Knowledge graph construction of heterogeneous data has seen a lot of uptake in the last decade from compliance to performance optimizations with respect to execution time. Besides execution time as metric for comparing knowledge graph construction, other metrics e.g. CPU or memory usage are not considered. This challenge aims at benchmarking systems to find which RDF graph construction system optimizes for metrics e.g. execution time, CPU, memory usage, or a combination of these metrics.
+						Knowledge graph construction of heterogeneous data has seen a lot of uptake in the last decade from compliance to performance optimizations with respect to execution time. Besides execution time as a metric for comparing knowledge graph construction, other metrics e.g. CPU or memory usage are not considered. This challenge aims at benchmarking systems to find which RDF graph construction system optimizes for metrics e.g. execution time, CPU, memory usage, or a combination of these metrics.
 					</p>
 				</div>
 
@@ -104,8 +104,7 @@
 											The task is to reduce and report the execution time and computing resources (CPU and memory usage) for the parameters listed in this challenge, compared to the state-of-the-art of the existing tools and the baseline results provided by this challenge. This challenge is not limited to execution times to create the fastest pipeline, but also computing resources to achieve the most efficient pipeline.
 										</p>
 										<p>
-											We provide a tool which can execute such pipelines end-to-end. This tool also collects and aggregates the metrics such as execution time, CPU and memory usage, necessary for this challenge as CSV files. Moreover, the information about the hardware used during the execution of the pipeline is available as well to allow fairly comparing different pipelines. Your pipeline should consist of Docker images which can be executed on Linux to run the tool. The tool is already tested with existing systems, relational databases e.g. MySQL and PostgreSQL, and triplestores e.g. Apache Jena Fuseki and OpenLink Virtuoso which can be combined in any configuration. However, it is not a requirement to use this tool for participating in this challenge.
-
+											We provide a tool which can execute such pipelines end-to-end. This tool also collects and aggregates the metrics such as execution time, CPU and memory usage, necessary for this challenge as CSV files. Moreover, the information about the hardware used during the execution of the pipeline is available as well to allow fairly comparing different pipelines. Your pipeline should consist of Docker images which can be executed on Linux to run the tool. The tool is already tested with existing systems, relational databases e.g. MySQL and PostgreSQL, and triplestores e.g. Apache Jena Fuseki and OpenLink Virtuoso which can be combined in any configuration. It is strongly encouraged to use this tool for participating in this challenge. If you prefer to use a different tool or our tool imposes technical requirements you cannot solve, please contact us directly.
                     </p>
                 </div>
 
@@ -123,25 +122,18 @@
 										<p>
 											<b>Data</b>
 											<ul>
-												<li>Number of data records: scaling the data size vertically by the number of records with a fixed number of data properties (10K, 100K, 500K, 1M, 5M records).</li>
-												<li>Number of data properties: scaling the data size horizontally by the number of data properties with a fixed number of data records (5, 10, 15, 20, 25, 30 columns).</li>
-												<li>Number of duplicate values: scaling the number of duplicate values in the dataset.</li>
-												<li>Number of empty values: scaling the number of empty values in the dataset.</li>
+												<li>Number of data records: scaling the data size vertically by the number of records with a fixed number of data properties (10K, 100K, 1M, 10M records).</li>
+												<li>Number of data properties: scaling the data size horizontally by the number of data properties with a fixed number of data records (1, 10, 20, 30 columns).</li>
+												<li>Number of duplicate values: scaling the number of duplicate values in the dataset (0%, 25%, 50%, 75%, 100%).</li>
+												<li>Number of empty values: scaling the number of empty values in the dataset (0%, 25%, 50%, 75%, 100%).</li>
 											</ul>
                     </p>
 										<p>
 											<b>Mappings</b>
 											<ul>
-												<li>Number of subjects: scaling the number of subjects with a fixed number of predicates and objects.</li>
-												<li>Number of predicates and objects: scaling the number of predicates and objects with a fixed number of subjects.</li>
+												<li>Number of subjects: scaling the number of subjects with a fixed number of predicates and objects (1, 10, 20, 30 TMs).</li>
+												<li>Number of predicates and objects: scaling the number of predicates and objects with a fixed number of subjects (1, 10, 20, 30 POMs).</li>
 												<li>Number of and type of joins: scaling the number of joins and type of joins (1-1, N-1, 1-N, N-M).</li>
-											</ul>
-                    </p>
-										<p>
-											<b>Output</b>
-											<ul>
-												<li>Number of files: scaling the number of output files.</li>
-												<li>Serialization format: variating the serialization format.</li>
 											</ul>
                     </p>
                 </div>
@@ -156,7 +148,7 @@
 				</div>
                 <div class="about-content" style="font-size: 14pt">
                     <p>
-											The GTFS-Madrid-Bench provides insights in the pipeline with real data from the public transport domain in Madrid.
+											The GTFS-Madrid-Bench provides insights in the pipeline with real data from the public transport domain in Madrid. 
 										</p>
 										<p>
 											<b>Scaling</b>
@@ -170,10 +162,10 @@
 										<p>
 											<b>Heterogeneity</b>
 											<ul>
-												<li>GTFS-100 with XML + JSON</li>
-												<li>GTFS-100 with CSV + XML</li>
-												<li>GTFS-100 with CSV + JSON</li>
-												<li>GTFS-100 with SQL + XML + JSON + CSV</li>
+												<li>Files-only: GTFS-100 with JSON, XML, and CSV</li>
+												<li>Tabular-only: GTFS-100 with SQL and CSV</li>
+												<li>Nested-only: GTFS-100 with JSON and XML</li>
+												<li>Mixed: GTFS-100 with SQL, CSV, JSON, and XML</li>
 											</ul>
                     </p>
                 </div>
@@ -192,23 +184,21 @@
 										</p>
 										<p>
 											<ol>
-												<li>The provided CSV files and SQL schema are loaded into a PostgreSQL relational database.</li>
-												<li>RMLMapper executed the provided mappings by accessing the PostgreSQL relational database to construct a knowledge graph in N-Triples as RDF format.</li>
+												<li>The provided CSV files and SQL schema are loaded into a MySQL relational database.</li>
+												<li>The provided mappings are executed by accessing the MySQL relational database to construct a knowledge graph in N-Triples as RDF format.</li>
 												<li>The constructed knowledge graph is loaded into a Virtuoso triplestore, tuned according to the Virtuoso documentation.</li>
-												<li>The provided SPARQL queries are executed on the SPARQL endpoint exposed by Virtuos.</li>
+												<li>The provided SPARQL queries are executed on the SPARQL endpoint exposed by Virtuoso.</li>
 											</ol>
                     </p>
 										<p>
-											The pipeline is executed 5 times from which the median execution time of each step is calculated and reported. Each step with the median execution time is then reported in the baseline results with all its measured metrics. Query timeout is set to 1 hour and knowledge graph construction timeout to 6 hours. The execution is performed with the following tool <TOOL LINK>, you can adapt the execution plans for this example pipeline to your own needs.
+											The pipeline is executed 5 times from which the median execution time of each step is calculated and reported. Each step with the median execution time is then reported in the baseline results with all its measured metrics. Query timeout is set to 1 hour and knowledge graph construction timeout to 24 hours. The execution is performed with the following tool <TOOL LINK>, you can adapt the execution plans for this example pipeline to your own needs.
                     </p>
 										<p>
 											Each parameter has its own directory in the ground truth dataset with the following files:
 											<ul>
 												<li>Input dataset as CSV.</li>
-												<li>Mapping file as RML.</li>
+												<li>Mapping file as RML. SPARQL CONSTRUCT queries are also provided.</li>
 												<li>Queries as SPARQL.</li>
-												<li>Measured metrics in <tt>aggregated.csv</tt>.</li>
-												<li>Hardware setup in <tt>case-info.txt</tt> to allow a fair comparison in terms of CPU cores, RAM memory, and storage.</li>
 												<li>Execution plan for the pipeline in <tt>metadata.json</tt>.</li>
 											</ul>
                     </p>
@@ -233,8 +223,7 @@
 										<p>
 											<ol>
 												<li>Input dataset as CSV for each parameter.</li>
-												<li>Mapping file as RML for each parameter.</li>
-												<li>SPARQL queries to retrieve the results for each parameter.</li>
+												<li>Mapping file as RML for each parameter. SPARQL CONSTRUCT queries are provided for non-RML engines.</li>
 												<li>Baseline results for each parameter with the example pipeline.</li>
 												<li>Ground truth dataset for each parameter generated with the example pipeline.</li>
 											</ol>
@@ -257,7 +246,7 @@
 														</p>
 														<p>
 															<ol>
-																<li>Input dataset as CSV for the scaling and a combination of XML, CSV, and JSON is provided for the heterogeneity.</li>
+																<li>Input dataset as CSV with SQL schema for the scaling and a combination of XML, CSV, and JSON is provided for the heterogeneity.</li>
 																<li>Mapping file as RML for both scaling and heterogeneity.</li>
 																<li>SPARQL queries to retrieve the results.</li>
 																<li>Baseline results with the example pipeline.</li>
@@ -292,6 +281,24 @@
                 </div>
 			</div>
 
+      <div class="col-md-10 col-md-offset-1 text-justify">
+				<div class="about-content" style="font-size: 14pt">
+                    <h3 class="title"><span style="color: #dd0a37;">Submissions</span></h3>
+
+				</div>
+                <div class="about-content" style="font-size: 14pt">
+                    <p>
+											Workflow for submissions:
+											<ol>
+												<li><b>Submit an abstract</b> before 31 of March 2023 AoE.</li>
+												<li><b>Submit results</b> until 19th of May 2023 AoE.</li>
+												<li><b>Submit report paper</b> AFTER the workshop.</li>
+												<li>Report paper <b>review</b>.</li>
+												<li>Publishing of the <b>proceedings</b></li>
+											</ol>
+                    </p>
+                </div>
+			</div>
 
 		</div>
 
