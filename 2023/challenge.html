@@ -95,6 +95,7 @@
 
 
 				<div class="about-content" style="font-size: 14pt">
+					<br><br>	
                     <h3 class="title"><span style="color: #dd0a37;">Task Description</span></h3>
 
 				</div>
@@ -103,7 +104,16 @@
 											The task is to reduce and report the execution time and computing resources (CPU and memory usage) for the parameters listed in this challenge, compared to the state-of-the-art of the existing tools and the baseline results provided by this challenge. This challenge is not limited to execution times to create the fastest pipeline, but also computing resources to achieve the most efficient pipeline.
 										</p>
 										<p>
-											We provide a tool which can execute such pipelines end-to-end. This tool also collects and aggregates the metrics such as execution time, CPU and memory usage, necessary for this challenge as CSV files. Moreover, the information about the hardware used during the execution of the pipeline is available as well to allow fairly comparing different pipelines. Your pipeline should consist of Docker images which can be executed on Linux to run the tool. The tool is already tested with existing systems, relational databases e.g. MySQL and PostgreSQL, and triplestores e.g. Apache Jena Fuseki and OpenLink Virtuoso which can be combined in any configuration. It is strongly encouraged to use this tool for participating in this challenge. If you prefer to use a different tool or our tool imposes technical requirements you cannot solve, please contact us directly.
+											We provide a tool which can execute such pipelines end-to-end. This tool also collects and aggregates the metrics such as execution time, CPU and memory usage, necessary for this challenge, as CSV files. Moreover, the information about the hardware used during the execution of the pipeline is available as well to allow fairly comparing different pipelines. Your pipeline should consist of Docker images which can be executed on Linux to run the tool. 
+
+										<p> 
+											<b>It is strongly encouraged to use this tool for participating in this challenge. If you prefer to use a different tool or our tool imposes technical requirements you cannot solve, please contact us directly.</b>
+
+											<br>
+											<br>
+											<p class="text-center"> <a href="https://github.com/kg-construct/challenge-tool">Click here to go to the website of the tool and the resources of the benchmark</a>.</p>
+											<br><br>	
+										</p>
                     </p>
                 </div>
                 <div class="about-content" style="font-size: 14pt">
@@ -114,16 +124,26 @@
                     <p>
 											Workflow for submissions:
 											<ol>
-												<li><b>Submit an abstract</b> before 31 of March 2023 AoE through <a href="https://openreview.net/group?id=eswc-conferences.org/ESWC/2023/Workshop/KGCW&referrer=%5BHomepage%5D(%2F)">OpenReview</a>.</li>
-												<li><b>Submit results</b> until 19th of May 2023 AoE.</li>
+												<li><b>Submit an abstract describing your tool</b> before 31 of March 2023 AoE through <a href="https://openreview.net/group?id=eswc-conferences.org/ESWC/2023/Workshop/KGCW">OpenReview</a>.</li>
+												<li><b>Submit results</b> (AoE - shared google sheet will be provided here):
+												<ul>
+												<li>Submit parameters dataset (Part 1) results before 12th of May.</li>
+												<li>Submit GTFS-Madrid-Bench (Part 2) results before 19th of May.</li>
+												
+												</ul>
+												</li>
+												<li><b>OPTIONAL (Proceedings):</b></li>
+												<ul>
 												<li><b>Submit report paper</b> AFTER the workshop.</li>
 												<li>Report paper will be <b>reviewed by PC/OC</b>.</li>
-												<li><b>Proceedings</b> will be published.</li>
+												<li><b>If paper is accepted, it</b> will be published within the proceedings of KGCW.</li>
+												</ul>
 											</ol>
 
 											<p class="text-center"> Do you want to ask questions? Join us <a href="https://join.slack.com/t/kg-construct/shared_invite/zt-1ftm8ebvo-qtu4xC_psKBZrgqF8ZPMtw">in slack</a> (#kgc_challenge channel)</p>
                     </p>
                 </div>
+                <br> <br>
 				<div class="about-content" style="font-size: 14pt">
                     <h3 class="title"><span style="color: #dd0a37;">Part 1: Knowledge Graph Construction Parameters</span></h3>
 
@@ -131,9 +151,11 @@
                 <div class="about-content" style="font-size: 14pt">
                     <p>
 											These parameters are evaluated using synthetic generated data to have more insights of their influence on the pipeline.
+											Data is in CSV (with SQL schema provided) and mappings are in R2RML.
+
 										</p>
 										<p>
-											<b>Data</b>
+											<b>Data Parameters</b>
 											<ul>
 												<li>Number of data records: scaling the data size vertically by the number of records with a fixed number of data properties (10K, 100K, 1M, 10M records).</li>
 												<li>Number of data properties: scaling the data size horizontally by the number of data properties with a fixed number of data records (1, 10, 20, 30 columns).</li>
@@ -142,7 +164,7 @@
 											</ul>
                     </p>
 										<p>
-											<b>Mappings</b>
+											<b>Mappings Parameters</b>
 											<ul>
 												<li>Number of subjects: scaling the number of subjects with a fixed number of predicates and objects (1, 10, 20, 30 TMs).</li>
 												<li>Number of predicates and objects: scaling the number of predicates and objects with a fixed number of subjects (1, 10, 20, 30 POMs).</li>
@@ -158,7 +180,8 @@
 				</div>
                 <div class="about-content" style="font-size: 14pt">
                     <p>
-											The GTFS-Madrid-Bench provides insights in the pipeline with real data from the public transport domain in Madrid. 
+											The GTFS-Madrid-Bench provides insights in the pipeline with real data from the public transport domain in Madrid. Mappings are provided in RML.						
+											
 										</p>
 										<p>
 											<b>Scaling</b>
@@ -168,6 +191,8 @@
 												<li>GTFS-100 SQL</li>
 												<li>GTFS-1000 SQL</li>
 											</ul>
+											<br>
+											Mappings are provided in R2RML
                     </p>
 										<p>
 											<b>Heterogeneity</b>
@@ -177,93 +202,11 @@
 												<li>Nested-only: GTFS-100 with JSON and XML</li>
 												<li>Mixed: GTFS-100 with SQL, CSV, JSON, and XML</li>
 											</ul>
+											
                     </p>
                 </div>
 
 
-				<div class="about-content" style="font-size: 14pt">
-                    <h3 class="title"><span style="color: #dd0a37;">Example Pipeline</span></h3>
-
-				</div>
-                <div class="about-content" style="font-size: 14pt">
-                    <p>
-											The ground truth dataset and baseline results are generated in different steps for each parameter:
-										</p>
-										<p>
-											<ol>
-												<li>The provided CSV files and SQL schema are loaded into a MySQL relational database.</li>
-												<li>The provided mappings are executed by accessing the MySQL relational database to construct a knowledge graph in N-Triples as RDF format.</li>
-												<li>The constructed knowledge graph is loaded into a Virtuoso triplestore, tuned according to the Virtuoso documentation.</li>
-												<li>The provided SPARQL queries are executed on the SPARQL endpoint exposed by Virtuoso.</li>
-											</ol>
-                    </p>
-										<p>
-											The pipeline is executed 5 times from which the median execution time of each step is calculated and reported. Each step with the median execution time is then reported in the baseline results with all its measured metrics. Query timeout is set to 1 hour and knowledge graph construction timeout to 24 hours. The execution is performed with the following tool <TOOL LINK>, you can adapt the execution plans for this example pipeline to your own needs.
-                    </p>
-										<p>
-											Each parameter has its own directory in the ground truth dataset with the following files:
-											<ul>
-												<li>Input dataset as CSV.</li>
-												<li>Mapping file as RML. SPARQL CONSTRUCT queries are also provided.</li>
-												<li>Queries as SPARQL.</li>
-												<li>Execution plan for the pipeline in <tt>metadata.json</tt>.</li>
-											</ul>
-                    </p>
-                </div>
-
-				<div class="about-content" style="font-size: 14pt">
-                    <h3 class="title"><span style="color: #dd0a37;">Datasets</span></h3>
-
-				</div>
-					<div class="about-content" style="font-size: 14pt">
-	                    <h4 class="title"><span style="color: #dd0a37;">Knowledge Graph Construction Parameters</span></h4>
-
-					</div>
-                <div class="about-content" style="font-size: 14pt">
-                    <p>
-											The dataset consists of:
-										</p>
-										<p>
-											<ol>
-												<li>Input dataset as CSV for each parameter.</li>
-												<li>Mapping file as RML for each parameter. SPARQL CONSTRUCT queries are provided for non-RML engines.</li>
-												<li>Baseline results for each parameter with the example pipeline.</li>
-												<li>Ground truth dataset for each parameter generated with the example pipeline.</li>
-											</ol>
-                    </p>
-										<p>
-											<b>Format</b>: All input datasets are provided as CSV, depending on the parameter that is being evaluated, the number of rows and columns may differ. The first row is always the header of the CSV.
-                    </p>
-										<p>
-											<b>Link</b>: TBD
-                    </p>
-
-                </div>
-									<div class="about-content" style="font-size: 14pt">
-					                    <h4 class="title"><span style="color: #dd0a37;">GTFS-Madrid-Bench</span></h4>
-
-									</div>
-				                <div class="about-content" style="font-size: 14pt">
-				                    <p>
-															The dataset consists of:
-														</p>
-														<p>
-															<ol>
-																<li>Input dataset as CSV with SQL schema for the scaling and a combination of XML, CSV, and JSON is provided for the heterogeneity.</li>
-																<li>Mapping file as RML for both scaling and heterogeneity.</li>
-																<li>SPARQL queries to retrieve the results.</li>
-																<li>Baseline results with the example pipeline.</li>
-																<li>Ground truth dataset generated with the example pipeline.</li>
-															</ol>
-				                    </p>
-														<p>
-															<b>Format</b>: CSV datasets always have a header as their first row. JSON and XML datasets have their own schema.
-				                    </p>
-														<p>
-															<b>Link</b>: TBD
-				                    </p>
-
-				                </div>
 
 				<div class="about-content" style="font-size: 14pt">
                     <h3 class="title"><span style="color: #dd0a37;">Evaluation Criteria</span></h3>
@@ -279,9 +222,20 @@
 											</ul>
                     </p>
                 </div>
+                <br> <br>
+                <div class="about-content" style="font-size: 14pt">
+                    <h3 class="title"><span style="color: #dd0a37;">How to Particapte?</span></h3>
+
+				</div>
+
+				<div class="about-content" style="font-size: 14pt">
+                    <p>
+					All Resources and ground truth are openly available in Zenodo: <a href="https://doi.org/10.5281/zenodo.7689310">https://doi.org/10.5281/zenodo.7689310</a>. Alhtough, using the tool provided (<a href="https://github.com/kg-construct/challenge-tool">https://github.com/kg-construct/challenge-tool</a>), everything is automatically setup.
+
+					</p>
 
 				
-               
+               </div>
 			</div>
 
 		</div>
