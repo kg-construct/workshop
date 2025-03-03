@@ -80,7 +80,7 @@
 		<div class="row">
 			<!-- section title -->
 			<div class="section-title">
-                <h2 class="title"><span>KGCW2024</span> <span style="color: #dd0a37;"> Challenge </span> </h2>
+                <h2 class="title"><span>KGCW2025</span> <span style="color: #dd0a37;"> Challenge </span> </h2>
 			</div>
 			<!-- /section title -->
 
@@ -89,41 +89,17 @@
 
 				<div class="about-content" style="font-size: 14pt">
 					<p>
-						Knowledge graph construction of heterogeneous data has seen a lot of uptake in the last decade from compliance to performance optimizations with respect to execution time. Besides execution time as a metric for comparing knowledge graph construction, other metrics e.g. CPU or memory usage are not considered. This challenge aims at sparking interest among RDF graph construction systems to comply with the new RML specifications and its modules while benchmarking them regarding e.g. execution time, CPU, memory usage, or a combination of these metrics.
+						Knowledge Graph Construction has seen a wide uptake among academics and industry. The W3C Community Group on Knowledge Graph Construction has prepared a conformance challenge with the new RDF Mapping Language (RML) modules. New modules such as RML IO Registry and RML Logical Views were introduced as well as new test cases with improved specifications.
 					</p>
 				</div>
-				<div class="about-content" style="font-size: 14pt">
-					<br><br>
-                    <h3 class="title"><span style="color: #dd0a37;">Sponsors</span></h3>
-
-				</div>
-                                <p>
-                                    We thank <a href="https://hellofuture.orange.com/">Orange</a> for their generous sponsoring of Virtual Machines for the Challenge.
-                                    All participants can have their own hardware now and ensures that all participants have exactly the same hardware.
-                                </p>
-                                <img style="width: 100px;" src="img/orange.png" alt="Orange logo" />
-
-
-				<div class="about-content" style="font-size: 14pt">
-					<br><br>
                     <h3 class="title"><span style="color: #dd0a37;">Task Description</span></h3>
 
 				</div>
                 <div class="about-content" style="font-size: 14pt">
                     <p>
-											The task is to comply with the new RML specification and its modules in this challenge 
-											while also aiming at an efficient implementation regarding execution time and computing resources e.g. CPU and memory usage.
-											This challenge is not limited to execution times to create the fastest pipeline, but also computing resources to achieve the most efficient pipeline.
+											The task is to comply with the new RML specification and its modules in this challenge.
 										</p>
-										<p>
-											We provide a tool which can execute such pipelines end-to-end. This tool also collects and aggregates the metrics such as execution time, CPU and memory usage, necessary for this challenge, as CSV files. Moreover, the information about the hardware used during the execution of the pipeline is available as well to allow fairly comparing different pipelines. Your pipeline should consist of Docker images which can be executed on Linux to run the tool.
-
-										<p>
-											<b>It is strongly encouraged to use this tool for participating in this challenge. If you prefer to use a different tool or our tool imposes technical requirements you cannot solve, please contact us directly.</b>
-
 											<br>
-											<br>
-											<p class="text-center"> <a href="https://github.com/kg-construct/challenge-tool">Click here to go to the website of the tool</a>.</p>
 											<p class="text-center"> <a href="https://zenodo.org/doi/10.5281/zenodo.10721874">Click here to go to the website of the resources</a>.</p>
 											<br><br>
 										</p>
@@ -137,14 +113,14 @@
                     <p>
                     					Workflow for submissions of the Challenge:
 							<ol>
-                                                                <li><b>Interest for participation</b> by January 31th 2024 AoE.</li>
-								<li><b>Results submission</b> by April 30th 2024 AoE (participants received submissions details via e-mail).</li>
+                                                                <li><b>Interest for participation</b> by March 24th 2025 AoE.</li>
+								<li><b>Results submission</b> by April 28th 2025 AoE (participants received submissions details via e-mail).</li>
 								<li><b>OPTIONAL (Proceedings):</b></li>
 								<ul>
-								<li><b>Submit report paper</b> by May 21th 2024.</li>
+								<li><b>Submit report paper</b> by May 23th 2025 AoE.</li>
 								<li>Report paper will be <b>reviewed by PC/OC</b>.</li>
 								<li><b>If paper is accepted, it</b> will be published within the proceedings of KGCW.</li>
-								<li> <b>Camera ready</b> submission by June 22th 2024.</li>
+								<li> <b>Camera ready</b> submission by June 13th 2025 AoE.</li>
 								</ul>
 							</ol>
 
@@ -156,88 +132,21 @@
         </div>
                 <br> <br>
 				<div class="about-content" style="font-size: 14pt">
-                    <h3 class="title"><span style="color: #dd0a37;">Track 1: Conformance: Test cases of all RML modules</span></h3>
+                    <h3 class="title"><span style="color: #dd0a37;">Test cases of all RML modules</span></h3>
 				</div>
                                 <p>
                                     Test compliance of an engine with all new RML modules:
                                     <ol>
                                         <li>RML-Core: <a href="https://github.com/kg-construct/rml-core/">https://github.com/kg-construct/rml-core/</a></li>
                                         <li>RML-IO: <a href="https://github.com/kg-construct/rml-io/">https://github.com/kg-construct/rml-io/</a></li>
+                                        <li>RML-IO-Registry: <a href="https://github.com/kg-construct/rml-io-registry/">https://github.com/kg-construct/rml-io-registry/</a></li>
                                         <li>RML-CC: <a href="https://github.com/kg-construct/rml-cc/">https://github.com/kg-construct/rml-cc/</a></li>
                                         <li>RML-FNML: <a href="https://github.com/kg-construct/rml-fnml/">https://github.com/kg-construct/rml-fnml/</a></li>
-                                        <li>RML-Star: <a href="https://github.com/kg-construct/rml-star/">https://github.com/kg-construct/rml-star/</a></li>
+					<li>RML-FNML: <a href="https://github.com/kg-construct/rml-fnml/">https://github.com/kg-construct/rml-fnml/</a></li>
+                                        <li>RML-LV: <a href="https://github.com/kg-construct/rml-lv/">https://github.com/kg-construct/rml-lv/</a></li>
                                     </ol>
                                     You can find the test cases on Zenodo as well where the official version used during the Challenge is published: <a href="https://zenodo.org/doi/10.5281/zenodo.10721874">https://zenodo.org/doi/10.5281/zenodo.10721874</a>
                                 </p>
-
-				<div class="about-content" style="font-size: 14pt">
-                    <h3 class="title"><span style="color: #dd0a37;">Track 2: Performance: Part 1: Knowledge Graph Construction Parameters</span></h3>
-
-				</div>
-                <div class="about-content" style="font-size: 14pt">
-                    <p>
-											These parameters are evaluated using synthetic generated data to have more insights of their influence on the pipeline.
-											Data is in CSV (with SQL schema provided) and mappings are in R2RML.
-
-										</p>
-										<p>
-											<b>Data Parameters</b>
-											<ul>
-												<li>Number of data records: scaling the data size vertically by the number of records with a fixed number of data properties (10K, 100K, 1M, 10M records).</li>
-												<li>Number of data properties: scaling the data size horizontally by the number of data properties with a fixed number of data records (1, 10, 20, 30 columns).</li>
-												<li>Number of duplicate values: scaling the number of duplicate values in the dataset (0%, 25%, 50%, 75%, 100%).</li>
-												<li>Number of empty values: scaling the number of empty values in the dataset (0%, 25%, 50%, 75%, 100%).</li>
-											</ul>
-                    </p>
-										<p>
-											<b>Mappings Parameters</b>
-											<ul>
-												<li>Number of subjects: scaling the number of subjects with a fixed number of predicates and objects (1, 10, 20, 30 TMs).</li>
-												<li>Number of predicates and objects: scaling the number of predicates and objects with a fixed number of subjects (1, 10, 20, 30 POMs).</li>
-												<li>Number of and type of joins: scaling the number of joins and type of joins (1-1, N-1, 1-N, N-M).</li>
-											</ul>
-                    </p>
-                    <p>
-                                    You can find the KGC Parameters on Zenodo as well where the official version used during the Challenge is published: <a href="https://zenodo.org/doi/10.5281/zenodo.10721874">https://zenodo.org/doi/10.5281/zenodo.10721874</a>
-                    </p>
-                </div>
-
-
-				<div class="about-content" style="font-size: 14pt">
-                    <h3 class="title"><span style="color: #dd0a37;">Track 2: Performance: Part 2: GTFS-Madrid-Bench</span></h3>
-
-				</div>
-                <div class="about-content" style="font-size: 14pt">
-                    <p>
-											The GTFS-Madrid-Bench provides insights in the pipeline with real data from the public transport domain in Madrid. Mappings are provided in R2RML for scaling and RML for heterogeneity.
-
-										</p>
-										<p>
-											<b>Scaling</b>
-											<ul>
-												<li>GTFS-1 SQL</li>
-												<li>GTFS-10 SQL</li>
-												<li>GTFS-100 SQL</li>
-												<li>GTFS-1000 SQL</li>
-											</ul>
-											<br>
-                    </p>
-										<p>
-											<b>Heterogeneity</b>
-											<ul>
-												<li>Files-only: GTFS-100 with JSON, XML, and CSV</li>
-												<li>Tabular-only: GTFS-100 with SQL and CSV</li>
-												<li>Nested-only: GTFS-100 with JSON and XML</li>
-												<li>Mixed: GTFS-100 with SQL, CSV, JSON, and XML</li>
-											</ul>
-
-                    </p>
-                    <p>
-                                    You can find the GTFS-Madrid-Benchmark on Zenodo as well where the official version used during the Challenge is published: <a href="https://zenodo.org/doi/10.5281/zenodo.10721874">https://zenodo.org/doi/10.5281/zenodo.10721874</a>
-                    </p>
-                </div>
-
-
 
 				<div class="about-content" style="font-size: 14pt">
                     <h3 class="title"><span style="color: #dd0a37;">Evaluation Criteria</span></h3>
@@ -247,9 +156,6 @@
             <p>
 							Submissions must evaluate the following metrics:
 							<ul>
-								<li><b>Execution time</b> of all the steps in the pipeline. The execution time of a step is the difference between the begin and end time of a step.</li>
-								<li><b>CPU time</b> as the time spent in the CPU for all steps of the pipeline. The CPU time of a step is the difference between the begin and end CPU time of a step.</li>
-								<li>Min and max <b>memory</b> consumption for each step of the pipeline. The minimum and maximum memory consumption of a step is the minimum and maximum calculated of the memory consumption during the execution of a step.</li>
 								<li><b>Compliance</b> with the new RML specification and its modules.</li>
 							</ul>
             </p>
